@@ -264,20 +264,20 @@
         /* Pain Points Grid Section */
         .pain-points-section {
             background: linear-gradient(180deg, #ffffff 0%, var(--gray-50) 100%);
-            padding: 100px 20px;
+            padding: 60px 16px; /* Mobile first */
         }
 
         .pain-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 32px;
-            margin-top: 64px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px; /* Mobile first */
+            margin-top: 40px; /* Mobile first */
         }
 
         .pain-card {
             background: white;
-            padding: 40px 32px;
-            border-radius: 20px;
+            padding: 24px 20px; /* Mobile first */
+            border-radius: 16px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.08);
             border: 2px solid var(--gray-100);
             transition: all 0.3s ease;
@@ -314,7 +314,7 @@
 
         /* Problem Section */
         .problem-section {
-            padding: 100px 20px;
+            padding: 60px 16px; /* Mobile first */
             background: var(--dark-navy);
             color: white;
         }
@@ -350,7 +350,7 @@
 
         /* Section Styling */
         section {
-            padding: 100px 20px;
+            padding: 60px 16px; /* Mobile first */
         }
 
         .section-title {
@@ -548,16 +548,16 @@
 
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 32px;
+            grid-template-columns: 1fr; /* Mobile first - single column */
+            gap: 20px; /* Mobile first */
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .skill-card {
             background: white;
-            padding: 48px 32px;
-            border-radius: 24px;
+            padding: 32px 20px; /* Mobile first */
+            border-radius: 20px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.08);
             transition: all 0.4s ease;
             border: 2px solid var(--gray-100);
@@ -620,8 +620,8 @@
 
         .offer-box {
             background: linear-gradient(135deg, var(--dark-navy-light) 0%, var(--dark-navy) 100%);
-            padding: 64px 48px;
-            border-radius: 32px;
+            padding: 32px 24px; /* Mobile first */
+            border-radius: 24px;
             max-width: 900px;
             margin: 0 auto;
             box-shadow: 0 30px 80px rgba(0, 212, 255, 0.2);
@@ -699,16 +699,16 @@
 
         .comparison-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 48px;
+            grid-template-columns: 1fr; /* Mobile first - single column */
+            gap: 24px; /* Mobile first */
             max-width: 1000px;
             margin: 0 auto;
         }
 
         .comparison-column {
             background: white;
-            padding: 48px 32px;
-            border-radius: 24px;
+            padding: 32px 24px; /* Mobile first */
+            border-radius: 20px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.08);
         }
 
@@ -766,15 +766,15 @@
 
         .modules-grid {
             display: grid;
-            gap: 32px;
+            gap: 20px; /* Mobile first */
             max-width: 900px;
             margin: 0 auto;
         }
 
         .module-card {
             background: white;
-            padding: 48px;
-            border-radius: 24px;
+            padding: 24px; /* Mobile first */
+            border-radius: 20px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.08);
             border: 2px solid var(--gray-100);
             transition: all 0.4s ease;
@@ -995,20 +995,117 @@
             }
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            body {
-                padding-top: 70px;
+        /* Responsive - Mobile First Approach */
+        
+        /* Tablet (768px and up) */
+        @media (min-width: 768px) {
+            section {
+                padding: 80px 20px;
             }
 
-            .site-header {
-                padding: 15px;
+            .pain-points-section {
+                padding: 80px 20px;
             }
 
-            .logo {
-                max-height: 40px;
+            .problem-section {
+                padding: 80px 20px;
             }
 
+            .pain-grid {
+                gap: 24px;
+                margin-top: 50px;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+
+            .pain-card {
+                padding: 32px 24px;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 24px;
+            }
+
+            .skill-card {
+                padding: 40px 24px;
+            }
+
+            .modules-grid {
+                gap: 24px;
+            }
+
+            .module-card {
+                padding: 32px;
+            }
+
+            .comparison-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 32px;
+            }
+
+            .comparison-column {
+                padding: 40px 28px;
+            }
+
+            .offer-box {
+                padding: 48px 32px;
+            }
+        }
+
+        /* Desktop (1024px and up) */
+        @media (min-width: 1024px) {
+            section {
+                padding: 100px 20px;
+            }
+
+            .pain-points-section {
+                padding: 100px 20px;
+            }
+
+            .problem-section {
+                padding: 100px 20px;
+            }
+
+            .pain-grid {
+                gap: 32px;
+                margin-top: 64px;
+            }
+
+            .pain-card {
+                padding: 36px 28px;
+            }
+
+            .skills-grid {
+                gap: 32px;
+            }
+
+            .skill-card {
+                padding: 44px 28px;
+            }
+
+            .modules-grid {
+                gap: 32px;
+            }
+
+            .module-card {
+                padding: 40px;
+            }
+
+            .comparison-grid {
+                gap: 40px;
+            }
+
+            .comparison-column {
+                padding: 44px 32px;
+            }
+
+            .offer-box {
+                padding: 56px 40px;
+            }
+        }
+
+        /* Mobile-specific overrides (max-width approach for edge cases) */
+        @media (max-width: 767px) {
             .hero h1 {
                 font-size: 2.25rem;
             }
@@ -1022,32 +1119,20 @@
             }
 
             .cta-button {
-                padding: 20px 40px;
-                font-size: 1.125rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .section-subtitle {
+                padding: 18px 32px;
                 font-size: 1.0625rem;
             }
 
-            .skills-grid {
-                grid-template-columns: 1fr;
+            .section-title {
+                font-size: 1.875rem;
             }
 
-            .comparison-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .offer-box {
-                padding: 40px 24px;
+            .section-subtitle {
+                font-size: 1rem;
             }
 
             .price-current {
-                font-size: 3rem;
+                font-size: 2.75rem;
             }
 
             .final-cta-section h2 {
@@ -1077,7 +1162,7 @@
             <a href="#offer" class="cta-button">QUERO ME TORNAR UM LÍDER DE VERDADE</a>
             
             <!-- Hero Image -->
-            <div class="hero-image image-placeholder wide">
+            <div class="hero-image image-placeholder square">
                 <img src="image_1.webp" alt="Programa do ZERO ao LÍDER - Transformação de Liderança">
             </div>
         </div>
@@ -1163,7 +1248,7 @@
             </div>
 
             <!-- Story Image -->
-            <div class="story-image image-placeholder">
+            <div class="story-image image-placeholder square">
                 <img src="image_2.webp" alt="Desafios do Novo Gestor">
             </div>
 
@@ -1199,7 +1284,7 @@
             </div>
 
             <!-- Discovery Image -->
-            <div class="discovery-image image-placeholder">
+            <div class="discovery-image image-placeholder square">
                 <img src="image_3.webp" alt="Estatísticas de Sucesso em Liderança">
             </div>
 
@@ -1327,7 +1412,7 @@
                 </div>
 
                 <!-- Offer Image -->
-                <div class="offer-image image-placeholder">
+                <div class="offer-image image-placeholder square">
                     <img src="image_9.webp" alt="Conteúdo do Programa do ZERO ao LÍDER">
                 </div>
 
@@ -1377,7 +1462,7 @@
             </div>
 
             <!-- Comparison Image -->
-            <div class="comparison-image image-placeholder">
+            <div class="comparison-image image-placeholder square">
                 <img src="image_10.webp" alt="Transformação: Antes e Depois do Programa do ZERO ao LÍDER">
             </div>
 
@@ -1397,7 +1482,7 @@
             <div class="modules-grid">
                 <div class="module-card">
                     <!-- Module Image 1 -->
-                    <div class="module-image image-placeholder">
+                    <div class="module-image image-placeholder square">
                         <img src="image_11.webp" alt="Módulo 1: Fundação da Liderança">
                     </div>
                     <span class="module-icon">📈</span>
@@ -1412,7 +1497,7 @@
 
                 <div class="module-card">
                     <!-- Module Image 2 -->
-                    <div class="module-image image-placeholder">
+                    <div class="module-image image-placeholder square">
                         <img src="image_12.webp" alt="Módulo 2: Comunicação Magnética">
                     </div>
                     <span class="module-icon">🎯</span>
@@ -1427,7 +1512,7 @@
 
                 <div class="module-card">
                     <!-- Module Image 3 -->
-                    <div class="module-image image-placeholder">
+                    <div class="module-image image-placeholder square">
                         <img src="image_13.webp" alt="Módulo 3: Delegação Inteligente">
                     </div>
                     <span class="module-icon">⚡</span>
@@ -1442,7 +1527,7 @@
 
                 <div class="module-card">
                     <!-- Module Image 4 -->
-                    <div class="module-image image-placeholder">
+                    <div class="module-image image-placeholder square">
                         <img src="image_14.webp" alt="Módulo 4: Gestão de Conflitos">
                     </div>
                     <span class="module-icon">🎭</span>
@@ -1457,7 +1542,7 @@
 
                 <div class="module-card">
                     <!-- Module Image 5 -->
-                    <div class="module-image image-placeholder">
+                    <div class="module-image image-placeholder square">
                         <img src="image_15.webp" alt="Módulo 5: Métricas e Medição de Sucesso">
                     </div>
                     <span class="module-icon">📊</span>
@@ -1481,7 +1566,7 @@
             <p>Enquanto outros novos gestores lutam com insegurança e resultados medíocres, você estará construindo autoridade usando nosso sistema comprovado.</p>
             
             <!-- Final CTA Image -->
-            <div class="final-cta-image image-placeholder">
+            <div class="final-cta-image image-placeholder square">
                 <img src="image_16.webp" alt="Comece Sua Jornada de Liderança">
             </div>
             
