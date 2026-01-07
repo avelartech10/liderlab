@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema LÍDER - Transforme Sua Insegurança em Liderança de Elite</title>
+    <title>Programa do ZERO ao LÍDER - Transforme Sua Insegurança em Liderança de Elite</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -50,9 +50,9 @@
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             line-height: 1.7;
             color: var(--gray-800);
-            background: #ffffff;
+            background: var(--dark-navy); /* Same as hero background */
             overflow-x: hidden;
-            padding-top: 90px; /* Space for fixed header */
+            padding-top: 0;
             margin: 0;
         }
 
@@ -133,10 +133,21 @@
         .hero {
             background: linear-gradient(135deg, var(--dark-navy) 0%, var(--dark-navy-light) 100%);
             color: white;
-            padding: 120px 20px 100px;
+            padding: 210px 20px 100px; /* 90px (header height) + 120px (original padding) */
             text-align: center;
             position: relative;
             overflow: hidden;
+            /* Premium background image with overlay */
+            background-image: 
+                linear-gradient(
+                    135deg, 
+                    rgba(30, 37, 80, 0.92) 0%, 
+                    rgba(42, 49, 102, 0.88) 100%
+                ),
+                url('hero-background.webp');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
         }
 
         .hero::before {
@@ -248,6 +259,86 @@
             font-weight: 600;
             font-size: 1.125rem;
             box-shadow: 0 4px 20px rgba(16, 185, 129, 0.3);
+        }
+
+        /* Pain Points Grid Section */
+        .pain-points-section {
+            background: linear-gradient(180deg, #ffffff 0%, var(--gray-50) 100%);
+            padding: 100px 20px;
+        }
+
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 64px;
+        }
+
+        .pain-card {
+            background: white;
+            padding: 40px 32px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            border: 2px solid var(--gray-100);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pain-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-red) 0%, var(--accent-orange) 100%);
+        }
+
+        .pain-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+            border-color: var(--primary-blue-light);
+        }
+
+        .pain-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+            color: var(--dark-navy);
+        }
+
+        .pain-card p {
+            color: var(--gray-700);
+            line-height: 1.8;
+        }
+
+        /* Problem Section */
+        .problem-section {
+            padding: 100px 20px;
+            background: var(--dark-navy);
+            color: white;
+        }
+
+        .problem-section .section-title,
+        .problem-section .section-subtitle {
+            color: white;
+        }
+
+        .problem-content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.25rem;
+            line-height: 1.9;
+            text-align: center;
+        }
+
+        .problem-content p {
+            margin-bottom: 32px;
+        }
+
+        .problem-content strong {
+            color: var(--primary-blue-light);
+            font-weight: 700;
         }
 
         /* Container */
@@ -814,6 +905,55 @@
             margin: 48px auto;
         }
 
+        /* FAQ Section */
+        .faq-section {
+            padding: 100px 20px;
+            background: linear-gradient(180deg, var(--gray-50) 0%, #ffffff 100%);
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 64px auto 0;
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 24px;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 2px solid var(--gray-100);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: var(--primary-blue);
+            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.15);
+        }
+
+        .faq-question {
+            padding: 32px 36px;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--dark-navy);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question::after {
+            content: '→';
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+        }
+
+        .faq-answer {
+            padding: 0 36px 32px;
+            color: var(--gray-700);
+            line-height: 1.9;
+            font-size: 1.0625rem;
+        }
+
         /* Footer */
         footer {
             background: var(--dark-navy-dark);
@@ -931,15 +1071,14 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Transforme Sua Insegurança em Liderança de Elite</h1>
-            <p class="hero-subtitle">Como Dominar a Arte da Gestão e Se Tornar o Líder Que Sua Equipe Precisa em Apenas 30 Dias</p>
-            <p class="hero-subtext">(mesmo se você nunca gerenciou ninguém antes ou já fracassou tentando)</p>
-            <a href="#offer" class="cta-button">BAIXAR AGORA - Apenas R$ 97</a>
-            <div class="promo-banner">⚡ PROMOÇÃO RELÂMPAGO (De R$ 297)</div>
+            <h1>DE GESTOR INSEGURO A LÍDER RESPEITADO</h1>
+            <p class="hero-subtitle">Acabe com a Síndrome do Impostor em 30 Dias</p>
+            <p class="hero-subtext">Se você sente que está "fingindo" ser um líder, teme perder o respeito da equipe, ou evita tomar decisões difíceis por medo de errar... você está no lugar certo. Descubra o método que transforma gestores ansiosos em líderes confiantes.</p>
+            <a href="#offer" class="cta-button">QUERO ME TORNAR UM LÍDER DE VERDADE</a>
             
             <!-- Hero Image -->
             <div class="hero-image image-placeholder wide">
-                <img src="image_1.webp" alt="Sistema LÍDER - Transformação de Liderança">
+                <img src="image_1.webp" alt="Programa do ZERO ao LÍDER - Transformação de Liderança">
             </div>
         </div>
     </section>
@@ -948,6 +1087,60 @@
     <div class="social-proof">
         O Sistema Comprovado Que Está Transformando Novos Gestores Inseguros em Líderes Respeitados em Apenas 30 Dias
     </div>
+
+    <!-- Pain Points Section -->
+    <section class="pain-points-section">
+        <div class="container">
+            <h2 class="section-title">VOCÊ SE IDENTIFICA COM ISSO?</h2>
+            <p class="section-subtitle">Os Sinais Que Todo Novo Gestor Com Síndrome do Impostor Enfrenta</p>
+            
+            <div class="pain-grid">
+                <div class="pain-card">
+                    <h3>😰 Dificuldade Para Conduzir Reuniões</h3>
+                    <p>Você trava ao tentar liderar reuniões com a equipe. As discussões fogem do controle, você não consegue manter o foco, e a reunião termina sem decisões claras ou ações definidas.</p>
+                </div>
+
+                <div class="pain-card">
+                    <h3>🤐 Evitando Conversas Difíceis</h3>
+                    <p>Você sabe que precisa dar feedback negativo ou resolver um conflito, mas adia repetidamente por medo de piorar a situação ou perder o respeito da equipe.</p>
+                </div>
+
+                <div class="pain-card">
+                    <h3>🔄 Trabalhando Mais que os Subordinados</h3>
+                    <p>Você está fazendo o trabalho operacional da sua equipe porque não confia que eles farão tão bem quanto você - ou porque você não sabe como delegar adequadamente.</p>
+                </div>
+
+                <div class="pain-card">
+                    <h3>❓ Sendo Constantemente Questionado</h3>
+                    <p>Sua equipe não segue suas diretrizes com convicção. Toda decisão vira um debate, e você sente que precisa "provar" cada escolha que faz.</p>
+                </div>
+
+                <div class="pain-card">
+                    <h3>😖 Dificuldade Para Gerir Conflitos</h3>
+                    <p>Quando surgem atritos entre membros da equipe, você não sabe como intervir. Tenta ignorar esperando que resolva sozinho, mas o clima fica cada vez mais tenso e a produtividade despenca.</p>
+                </div>
+
+                <div class="pain-card">
+                    <h3>👥 Comparando-se aos Outros</h3>
+                    <p>Você olha para outros gestores e pensa "eles parecem tão confiantes, por que eu não consigo ser assim?" A sensação de inadequação é constante.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem-section">
+        <div class="container">
+            <h2 class="section-title">O PROBLEMA NÃO É VOCÊ</h2>
+            <p class="section-subtitle">É Que Ninguém Te Ensinou Como Ser Líder De Verdade</p>
+            
+            <div class="problem-content">
+                <p>Aqui está a verdade que ninguém te contou: <strong>você não nasceu sabendo como liderar.</strong> E provavelmente te promoveram para gestor porque você era excelente no seu trabalho técnico - não porque te ensinaram as habilidades de liderança necessárias.</p>
+                
+                <p>A síndrome do impostor não acontece porque você é incompetente. Acontece porque você está tentando liderar sem as ferramentas certas. É como tentar construir uma casa sem martelo ou pregos - não importa o quanto você se esforce, você vai se sentir despreparado.</p>
+            </div>
+        </div>
+    </section>
 
     <!-- Story Section -->
     <section class="story-section">
@@ -1028,7 +1221,6 @@
 
             <div style="text-align: center; margin-top: 48px;">
                 <a href="#offer" class="cta-button">BAIXAR AGORA - Apenas R$ 97</a>
-                <div class="promo-banner">⚡ PROMOÇÃO RELÂMPAGO (De R$ 297)</div>
             </div>
         </div>
     </section>
@@ -1073,11 +1265,11 @@
                 <div class="skill-card">
                     <!-- Skill Image 4 -->
                     <div class="skill-image image-placeholder square">
-                        <img src="image_7.webp" alt="Presença Executiva">
+                        <img src="image_7.webp" alt="Gestão de Conflitos">
                     </div>
                     <span class="skill-icon">🎭</span>
-                    <h3>PRESENÇA EXECUTIVA</h3>
-                    <p>Como projetar confiança mesmo quando você não tem todas as respostas - O mindset que faz equipes seguirem você voluntariamente (sem isso, você será questionado em toda decisão)</p>
+                    <h3>GESTÃO DE CONFLITOS</h3>
+                    <p>Como transformar tensões em oportunidades de crescimento - Técnicas de mediação neutra e intervenção preventiva que resolvem problemas antes que eles explodam (sem isso, conflitos pequenos vão se tornar crises que destroem sua equipe)</p>
                 </div>
 
                 <div class="skill-card">
@@ -1093,7 +1285,7 @@
 
             <div style="text-align: center; margin-top: 64px;">
                 <a href="#offer" class="cta-button">BAIXAR AGORA - Apenas R$ 97</a>
-                <div class="promo-banner">⚡ PROMOÇÃO RELÂMPAGO (De R$ 297)</div>
+                <div class="promo-banner">Por tempo limitado</div>
             </div>
         </div>
     </section>
@@ -1101,14 +1293,14 @@
     <!-- Offer Section -->
     <section class="offer-section" id="offer">
         <div class="container">
-            <h2 class="section-title">ACESSO INSTANTÂNEO - COMECE SUA TRANSFORMAÇÃO HOJE</h2>
-            <p class="section-subtitle">Aqui Está Tudo Que Você Recebe Com O Sistema LÍDER Hoje!</p>
+            <h2 class="section-title" style="color: white;">ACESSO INSTANTÂNEO - COMECE SUA TRANSFORMAÇÃO HOJE</h2>
+            <p class="section-subtitle">Aqui Está Tudo Que Você Recebe Com O Programa do ZERO ao LÍDER Hoje!</p>
 
             <div class="offer-box">
                 <h3>O que está incluído:</h3>
                 
                 <div class="product-item">
-                    <h4>📚 O Sistema LÍDER Completo</h4>
+                    <h4>📚 O Programa do ZERO ao LÍDER Completo</h4>
                     <p>5 módulos práticos que transformam novos gestores em líderes respeitados</p>
                 </div>
 
@@ -1136,7 +1328,7 @@
 
                 <!-- Offer Image -->
                 <div class="offer-image image-placeholder">
-                    <img src="image_9.webp" alt="Conteúdo do Sistema LÍDER">
+                    <img src="image_9.webp" alt="Conteúdo do Programa do ZERO ao LÍDER">
                 </div>
 
                 <div class="price-box">
@@ -1146,7 +1338,6 @@
 
                 <div style="text-align: center;">
                     <a href="#" class="cta-button">GARANTIR MINHA VAGA</a>
-                    <div class="promo-banner">⚡ Por Apenas R$ 97</div>
                 </div>
             </div>
         </div>
@@ -1161,7 +1352,7 @@
 
             <div class="comparison-grid">
                 <div class="comparison-column before">
-                    <h3>Antes do Sistema LÍDER</h3>
+                    <h3>Antes do Programa do ZERO ao LÍDER</h3>
                     <ul>
                         <li>❌ Ansiedade constante sobre cada decisão</li>
                         <li>❌ Medo de que a equipe não te respeite</li>
@@ -1173,7 +1364,7 @@
                 </div>
 
                 <div class="comparison-column after">
-                    <h3>Depois do Sistema LÍDER</h3>
+                    <h3>Depois do Programa do ZERO ao LÍDER</h3>
                     <ul>
                         <li>✅ Confiança natural para liderar qualquer situação</li>
                         <li>✅ Equipe que te procura voluntariamente para conselhos</li>
@@ -1187,7 +1378,7 @@
 
             <!-- Comparison Image -->
             <div class="comparison-image image-placeholder">
-                <img src="image_10.webp" alt="Transformação: Antes e Depois do Sistema LÍDER">
+                <img src="image_10.webp" alt="Transformação: Antes e Depois do Programa do ZERO ao LÍDER">
             </div>
 
             <div style="text-align: center; margin-top: 64px;">
@@ -1267,10 +1458,10 @@
                 <div class="module-card">
                     <!-- Module Image 5 -->
                     <div class="module-image image-placeholder">
-                        <img src="image_15.webp" alt="Módulo 5: Liderança Sustentável">
+                        <img src="image_15.webp" alt="Módulo 5: Métricas e Medição de Sucesso">
                     </div>
                     <span class="module-icon">📊</span>
-                    <h3>MÓDULO 5: LIDERANÇA SUSTENTÁVEL (Semana 5)</h3>
+                    <h3>MÓDULO 5: MÉTRICAS E MEDIÇÃO DE SUCESSO (Semana 5)</h3>
                     <p>Criando sistemas que funcionam sozinhos - este modelo de gestão te ajuda a manter resultados enquanto desenvolve autonomia da equipe.</p>
                     <ul>
                         <li>Sistema de Metas Colaborativas que engaja a equipe nos objetivos</li>
@@ -1286,7 +1477,7 @@
     <section class="final-cta-section">
         <div class="container final-cta-content">
             <h2>DOMINE A ARTE DA LIDERANÇA AGORA</h2>
-            <h3 style="font-size: 2rem; font-weight: 600; margin-bottom: 32px;">Garanta O Sistema LÍDER Agora</h3>
+            <h3 style="font-size: 2rem; font-weight: 600; margin-bottom: 32px;">Garanta O Programa do ZERO ao LÍDER Agora</h3>
             <p>Enquanto outros novos gestores lutam com insegurança e resultados medíocres, você estará construindo autoridade usando nosso sistema comprovado.</p>
             
             <!-- Final CTA Image -->
@@ -1299,11 +1490,61 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">PERGUNTAS FREQUENTES</h2>
+            <p class="section-subtitle">Tudo O Que Você Precisa Saber Sobre O Programa do ZERO ao LÍDER</p>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">O que exatamente é o Programa do ZERO ao LÍDER?</div>
+                    <div class="faq-answer">O Programa do ZERO ao LÍDER é um e-book completo e prático com metodologias comprovadas para transformar gestores inseguros em líderes respeitados em 30 dias. Você receberá um guia passo a passo com frameworks, scripts e técnicas específicas para cada situação de liderança que você vai enfrentar.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Como vou receber o material?</div>
+                    <div class="faq-answer">Imediatamente após a confirmação do pagamento, você receberá um e-mail com o link para download do e-book em formato PDF. Você pode ler no seu computador, tablet ou celular, a qualquer hora e em qualquer lugar.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Como funciona a garantia de satisfação?</div>
+                    <div class="faq-answer">Oferecemos uma garantia incondicional de 7 dias. Se por qualquer motivo você não estiver satisfeito com o Programa do ZERO ao LÍDER, basta enviar um e-mail e devolveremos 100% do seu investimento. Sem perguntas, sem complicações.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Quanto tempo leva para ver resultados?</div>
+                    <div class="faq-answer">A maioria dos gestores que seguem o sistema reporta melhorias significativas já nas primeiras 2 semanas. O método é projetado para implementação gradual, permitindo que você comece a aplicar as técnicas imediatamente e construa sua confiança progressivamente ao longo dos 30 dias.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Isso funciona para qualquer tipo de equipe?</div>
+                    <div class="faq-answer">Sim! Os princípios de liderança do Programa do ZERO ao LÍDER são universais e funcionam em qualquer setor ou tamanho de equipe. Seja você gestor de vendas, tecnologia, operações, marketing ou qualquer outra área - os frameworks se aplicam e trazem resultados.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Preciso de experiência prévia em gestão?</div>
+                    <div class="faq-answer">Não! O Programa do ZERO ao LÍDER foi criado especificamente para novos gestores ou pessoas que assumiram posições de liderança recentemente. Se você está enfrentando síndrome do impostor ou insegurança na gestão, este método foi feito para você.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">O investimento de R$ 97 é um pagamento único?</div>
+                    <div class="faq-answer">Sim! É um pagamento único de R$ 97 e você tem acesso vitalício ao e-book completo. Não há mensalidades, não há cobranças recorrentes. Esta é uma oferta promocional por tempo limitado - o valor normal é R$ 297.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">E se eu tiver dúvidas após adquirir o e-book?</div>
+                    <div class="faq-answer">Você terá acesso ao nosso suporte por e-mail para esclarecer dúvidas sobre a implementação das estratégias. Queremos garantir que você tenha sucesso com o Programa do ZERO ao LÍDER e estamos aqui para ajudar nessa jornada.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="copyright">
-                COPYRIGHT 2025 | SISTEMA LÍDER | POLÍTICA DE PRIVACIDADE | TERMOS E CONDIÇÕES
+                COPYRIGHT 2025 | PROGRAMA DO ZERO AO LÍDER | POLÍTICA DE PRIVACIDADE | TERMOS E CONDIÇÕES
             </div>
 
             <p class="legal-text">
