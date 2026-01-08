@@ -136,7 +136,7 @@
         .hero {
             background: linear-gradient(135deg, var(--dark-navy) 0%, var(--dark-navy-light) 100%);
             color: white;
-            padding: 10rem 1.5rem 2.5rem; /* 160px top para mostrar imagem de fundo, 24px lateral, 40px bottom */
+            padding: 10rem 1.5rem 2.5rem; /* 160px top, 24px lateral (mantém padrão), 40px bottom */
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -260,7 +260,7 @@
         .social-proof {
             background: linear-gradient(135deg, var(--success-green) 0%, var(--success-green-light) 100%);
             color: white;
-            padding: 1rem 1.5rem; /* 16px 24px */
+            padding: 1rem 0.75rem; /* 16px vertical, 12px horizontal - margem mais fina */
             text-align: center;
             font-weight: 600;
             font-size: 1.125rem; /* 18px - parágrafo principal */
@@ -270,7 +270,7 @@
         /* Pain Points Grid Section */
         .pain-points-section {
             background: linear-gradient(180deg, #ffffff 0%, var(--gray-50) 100%);
-            padding: 2.5rem 1.5rem; /* 40px vertical, 24px horizontal - padrão */
+            padding: 2.5rem 0.75rem; /* 40px vertical, 12px horizontal - margem mais fina */
         }
 
         .pain-grid {
@@ -322,7 +322,7 @@
 
         /* Problem Section */
         .problem-section {
-            padding: 2.5rem 1.5rem; /* 40px vertical, 24px horizontal - padrão */
+            padding: 2.5rem 0.75rem; /* 40px vertical, 12px horizontal - margem mais fina */
             background: var(--dark-navy);
             color: white;
         }
@@ -353,12 +353,12 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 1.5rem; /* 24px - padrão mobile */
+            padding: 0 0.75rem; /* 12px - margem lateral mais fina */
         }
 
         /* Section Styling */
         section {
-            padding: 2.5rem 1.5rem; /* 40px vertical, 24px horizontal - padrão mobile */
+            padding: 2.5rem 0.75rem; /* 40px vertical, 12px horizontal - margem mais fina */
         }
 
         .section-title {
@@ -953,7 +953,7 @@
         }
 
         .faq-question {
-            padding: 1.5rem; /* 24px */
+            padding: 1.25rem 0.75rem; /* 20px vertical, 12px horizontal - margem fina */
             font-weight: 700;
             font-size: 1.125rem; /* 18px - parágrafo principal */
             color: var(--dark-navy);
@@ -970,7 +970,7 @@
         }
 
         .faq-answer {
-            padding: 0 1.5rem 1.5rem; /* 0 24px 24px */
+            padding: 0 0.75rem 1.25rem; /* 0 12px 20px - margem fina */
             color: var(--gray-700);
             line-height: 1.6;
             font-size: 1rem; /* 16px - body text padrão */
@@ -980,7 +980,7 @@
         footer {
             background: var(--dark-navy-dark);
             color: var(--gray-300);
-            padding: 2.5rem 1.5rem 2rem; /* 40px 24px 32px */
+            padding: 2.5rem 0.75rem 2rem; /* 40px 12px 32px - margem mais fina */
             text-align: center;
         }
 
@@ -1022,15 +1022,15 @@
         /* Tablet (768px and up) */
         @media (min-width: 768px) {
             .container {
-                padding: 0 1.5rem; /* Mantém padrão 24px */
+                padding: 0 0.75rem; /* Mantém margem fina 12px */
             }
 
             section {
-                padding: 4rem 1.5rem; /* 64px vertical, 24px horizontal */
+                padding: 4rem 0.75rem; /* 64px vertical, 12px horizontal - margem fina */
             }
 
             .hero {
-                padding: 12rem 1.5rem 4rem; /* 192px top para mostrar mais imagem de fundo, 24px lateral, 64px bottom */
+                padding: 12rem 1.5rem 4rem; /* Hero mantém 24px lateral */
             }
 
             .hero h1 {
@@ -1069,7 +1069,7 @@
 
             .pain-points-section,
             .problem-section {
-                padding: 4rem 1.5rem;
+                padding: 4rem 0.75rem; /* Margem fina */
             }
 
             .pain-grid {
@@ -1177,28 +1177,28 @@
             }
 
             .faq-question {
-                padding: 2rem;
+                padding: 1.5rem 0.75rem; /* Margem fina */
                 font-size: 1.25rem;
             }
 
             .faq-answer {
-                padding: 0 2rem 2rem;
+                padding: 0 0.75rem 1.5rem; /* Margem fina */
                 font-size: 1.0625rem;
             }
 
             footer {
-                padding: 3rem 1.5rem 2.5rem;
+                padding: 3rem 0.75rem 2.5rem; /* Margem fina */
             }
         }
 
         /* Desktop (1024px and up) */
         @media (min-width: 1024px) {
             section {
-                padding: 5rem 1.5rem; /* 80px vertical, 24px horizontal */
+                padding: 5rem 0.75rem; /* 80px vertical, 12px horizontal - margem fina */
             }
 
             .hero {
-                padding: 15rem 1.5rem 5rem; /* 240px top para mostrar bastante imagem de fundo, 24px lateral, 80px bottom */
+                padding: 15rem 1.5rem 5rem; /* Hero mantém 24px lateral */
             }
 
             .hero h1 {
@@ -1237,7 +1237,7 @@
 
             .pain-points-section,
             .problem-section {
-                padding: 5rem 1.5rem;
+                padding: 5rem 0.75rem; /* Margem fina */
             }
 
             .pain-grid {
@@ -1342,17 +1342,17 @@
             }
 
             .faq-question {
-                padding: 2.5rem;
+                padding: 2rem 0.75rem; /* Margem fina */
                 font-size: 1.5rem;
             }
 
             .faq-answer {
-                padding: 0 2.5rem 2.5rem;
+                padding: 0 0.75rem 2rem; /* Margem fina */
                 font-size: 1.125rem;
             }
 
             footer {
-                padding: 4rem 1.5rem 3rem;
+                padding: 4rem 0.75rem 3rem; /* Margem fina */
             }
         }
     </style>
